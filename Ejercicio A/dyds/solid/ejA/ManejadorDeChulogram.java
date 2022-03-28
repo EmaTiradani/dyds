@@ -1,6 +1,6 @@
 package dyds.solid.ejA;
 
-public class ManejadorDeChulogram {
+public class ManejadorDeChulogram implements RedSocial{
 
 	private static ManejadorDeChulogram instance;
 
