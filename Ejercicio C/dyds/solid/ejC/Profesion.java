@@ -1,6 +1,6 @@
 package dyds.solid.ejC;
 
-public enum Profesion {
+public enum Profesion{
     NONE,
     Granuja,
     Mago,

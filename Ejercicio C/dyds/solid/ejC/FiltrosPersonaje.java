@@ -5,6 +5,11 @@ import java.util.List;
 
 public class FiltrosPersonaje {
 
+	public List<Personaje> filtradoPorProfesion(List<Personaje> personajes, Profesion profesion){
+		Filtro filtro = new FiltroProfesion();
+		return filtro.filter(personajes, Atributo atrib = new AProfesion().setProfesion(profesion));
+	}
+	/*
 	public List<Personaje> filtradoPorProfesion(List<Personaje> personajes, Profesion profesion) {
 		List<Personaje> filteredList = new ArrayList<Personaje>();
 		for (Personaje personaje : personajes) {
@@ -33,5 +38,5 @@ public class FiltrosPersonaje {
 			}
 		}
 		return filteredList;
-	}
+	}*/
 }

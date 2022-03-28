@@ -3,7 +3,7 @@ package dyds.solid.ejA;
 import java.util.ArrayList;
 
 //Este repo es de juguete, cambiar a algo posta en otro Sprint!!!
-public class RepositorioDummy {
+public class RepositorioDummy implements Repositorio{
 
 	private ArrayList<Contenido> dummyDB = new ArrayList<>();
 

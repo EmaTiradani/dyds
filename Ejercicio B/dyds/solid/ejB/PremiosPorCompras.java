@@ -6,16 +6,18 @@ import java.util.Random;
 public class PremiosPorCompras {
 
     private int ultimoCodigo;
-    private ArrayList<Giftcard> listaGiftcardsOtorgadas;
+    private ArrayList<Premio> listaPremiosOtorgados;
+    private Mensajero mensajero = new Mensajero();
 
     public void controlarCompra(Compra compra) {
         Usuario usuario = compra.darComprador();
-        if(compra.importe() > 50000 && usuario.isGold()) {
+        Controlador controlador = new Controlador();
+        if(controlador.controlarCompra(compra, usuario)) {
             ultimoCodigo++;
-            int codigoGiftcard = (new Random().nextInt(9000) + 1000)*10000 + ultimoCodigo;
-            Giftcard nuevaGiftcard = new Giftcard(codigoGiftcard, usuario);
-            listaGiftcardsOtorgadas.add(nuevaGiftcard);
-            SesionQuepasApp sesionQuepasApp =null;
+            Premio nuevoPremio = new Giftcard(ultimoCodigo, usuario);
+            listaPremiosOtorgados.add(nuevoPremio);//Pasar esto a un generador de gift cards?
+            mensajero.enviarMensaje(usuario, nuevoPremio);
+            /*SesionQuepasApp sesionQuepasApp =null;
             try {
 				sesionQuepasApp = SesionQuepasApp.getInstance();
                 String contactoUsuario = usuario.getContacto();
@@ -24,14 +26,11 @@ public class PremiosPorCompras {
             } finally {
             if(sesionQuepasApp !=null)
               sesionQuepasApp.cerrar();
-            }
+            }*/
         }
     }
-    private String componerMensajeAviso(Giftcard giftcard) {
-       return "Gracias! por tu compra ganaste una Giftcard! reclamala con: " + giftcard.darCodigo();
-    }
     public PremiosPorCompras() {
-	    listaGiftcardsOtorgadas = new ArrayList<>();
+	    listaPremiosOtorgados = new ArrayList<>();
 	    ultimoCodigo = 1000;
     }
 }
