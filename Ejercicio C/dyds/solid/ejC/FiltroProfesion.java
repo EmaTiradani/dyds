@@ -5,9 +5,9 @@ import java.util.List;
 
 public class FiltroProfesion implements Filtro{
 
-    public List<Personaje> filter(List<Personaje> personajes, Atributo pj) {
+    public List<Personaje> filter(List<Personaje> personajes, Personaje pj) {
 
-        Profesion profesion = ((AProfesion)pj).getProfesion();
+        Profesion profesion = pj.getRubro();
         List<Personaje> filteredList = new ArrayList<Personaje>();
         for (Personaje personaje : personajes) {
             if (personaje.getRubro() == profesion) {

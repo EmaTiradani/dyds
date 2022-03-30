@@ -25,7 +25,7 @@ public class EjCTest {
 		logicaPersonajes.getPersonajes().add(personajeC);
 		logicaPersonajes.getPersonajes().add(personajeD);
 	}
-
+/*
 	@Test
 	public void testProfesionesCant() {
 		List<Personaje> clientesBB = logicaPersonajes.getPersonajesConProfesion(Profesion.Granuja);
@@ -70,4 +70,6 @@ public class EjCTest {
 
 
 
+
+*/
 }
