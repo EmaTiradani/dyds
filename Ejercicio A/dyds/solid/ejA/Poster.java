@@ -4,11 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Poster{
-    private ArrayList<RedSocial> redes = new ArrayList<RedSocial>();// = new List<RedSocial>();
-    //RedSocial [] redes = new RedSocial[20];
+    private ArrayList<RedSocial> redes = new ArrayList<RedSocial>();
 
     public Poster(ArrayList<RedSocial> listaDeRedes){
-        //redes[0]=(ManejadorDeChulogram.getInstance());
         redes = listaDeRedes;
     }
     public void post(Contenido contenidoNuevo){
