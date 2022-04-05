@@ -1,23 +1,19 @@
 package dyds.solid.ejB;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Giftcard implements Premio{
 
-    private static Giftcard instance;
     int codigo;
     Usuario beneficiario;
 
     private Giftcard(){
     }
 
-    public static Giftcard getInstance(int ultimoCodigo, Usuario beneficiario) {
-        if(instance == null){
-            instance = new Giftcard();
-            this.codigo = (new Random().nextInt(9000) + 1000)*10000 + ultimoCodigo;
+    public Giftcard(int codigo, Usuario beneficiario) {
+            this.codigo = codigo;
             this.beneficiario = beneficiario;
-        }
-        return instance;
     }
 
     public int darCodigo() {
