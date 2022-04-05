@@ -2,7 +2,7 @@ package dyds.solid.ejA;
 
 public class ProcesadorDeContenidosNuevos {
 	Poster poster = new Poster();
-	Repositorio repo = new RepositorioDummy(); //Sacar el repo a una interfaz?
+	Repositorio repo = new RepositorioDummy();
 
 	public void procesar(Contenido contenidoNuevo){
 		if(contenidoNuevo.validar() && repo.grabar(contenidoNuevo)){
