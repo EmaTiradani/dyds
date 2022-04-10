@@ -5,25 +5,25 @@ import java.util.List;
 
 public class Club {
 	
-	private int id; // unique identifier
-	private String name; // team name
-	private String home; // stadium name
-	private int year; // founding year
-	private Image colours; // image depicting a shirt or the shield of the club
-	private List<Player> roster; // A list with the players of the first division team
-	private int wins; //The amount of matches that the team has won in the current season
-	private int loses; //The amount of matches that the team has lost in the current season
-	private int goalsf; //The amount of goals that the team made in the current season
-	private int goalsa; //The amount of goals that the team received in the current season
+	private int id;
+	private String name;
+	private String stadiumName;
+	private int foundingYear;
+	private Image colours;
+	private List<Player> firstDivisionTeam;
+	private int currentSeasonWins;
+	private int currentSeasonLosses;
+	private int currentSeasonGoals;
+	private int currentSeasonGoalsReceived;
 
-	private long timeStamp; // local repo time stamp
+	private long localRepoTimeStamp;
 	
 	public Club(int id, String name, String home, int year) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.home = home;
-		this.year = year;
+		this.stadiumName = home;
+		this.foundingYear = year;
 	}
 	
 	public int getId() {
@@ -39,16 +39,16 @@ public class Club {
 		this.name = name;
 	}
 	public String getHome() {
-		return home;
+		return stadiumName;
 	}
 	public void setHome(String home) {
-		this.home = home;
+		this.stadiumName = home;
 	}
-	public int getYear() {
-		return year;
+	public int getFoundingYear() {
+		return foundingYear;
 	}
-	public void setYear(int year) {
-		this.year = year;
+	public void setFoundingYear(int foundingYear) {
+		this.foundingYear = foundingYear;
 	}
 	public Image getColours() {
 		return colours;
@@ -56,25 +56,25 @@ public class Club {
 	public void setColours(Image colours) {
 		this.colours = colours;
 	}
-	public List<Player> getRoster() {
-		return roster;
+	public List<Player> getFirstDivisionTeam() {
+		return firstDivisionTeam;
 	}
-	public void setRoster(List<Player> roster) {
-		this.roster = roster;
+	public void setFirstDivisionTeam(List<Player> firstDivisionTeam) {
+		this.firstDivisionTeam = firstDivisionTeam;
 	}
 
 	public void addMatchInfo(boolean win, int gf, int ga){
-		if(win) wins++;
-		else loses++;
-		goalsa += ga;
-		goalsf += gf;
+		if(win) currentSeasonWins++;
+		else currentSeasonLosses++;
+		currentSeasonGoalsReceived += ga;
+		currentSeasonGoals += gf;
 	}
 
-	public long getTimeStamp() {
-		return timeStamp;
+	public long getLocalRepoTimeStamp() {
+		return localRepoTimeStamp;
 	}
 
-	public void setTimeStamp(long timeStamp) {
-		this.timeStamp = timeStamp;
+	public void setLocalRepoTimeStamp(long localRepoTimeStamp) {
+		this.localRepoTimeStamp = localRepoTimeStamp;
 	}
 }

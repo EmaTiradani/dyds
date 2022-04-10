@@ -2,19 +2,19 @@ package dyds.act2.parte2;
 
 public class Player {
 	
-	private String name; // song name
-	private int born; // birth year
+	private String songName;
+	private int birthYear;
 
-	public String getName() {
-		return name;
+	public String getSongName() {
+		return songName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setSongName(String songName) {
+		this.songName = songName;
 	}
-	public int getBorn() {
-		return born;
+	public int getBirthYear() {
+		return birthYear;
 	}
-	public void setBorn(int born) {
-		this.born = born;
+	public void setBirthYear(int birthYear) {
+		this.birthYear = birthYear;
 	}
 }

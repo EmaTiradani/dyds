@@ -11,15 +11,30 @@ public class Manager {
 
 	public Club get(int id) {
 		
-		Club a =  repo.getFilmLocalSource().getClub(id);
-		
-		// If it's not locally saved or too old, fetch it from remote and save it locally
-		if(a == null || System.currentTimeMillis() - a.getTimeStamp() > ClubRepository.T * 24 * 60 * 1000) {
-			//Replace these lines with calls to parte1 module, when they decide to finish it
-			a = repo.getFilmRemoteSource().get(id);
-			repo.getFilmLocalSource().storeClub(a);
+		Club club =  repo.getFilmLocalSource().getClub(id);
+
+		if(!locallySaved(club) || tooOld(club)){
+			//Replace these lines with calls to parte1 module, when they decide to finish it TODO
+			club = repo.getFilmRemoteSource().get(id);
+			repo.getFilmLocalSource().storeClub(club);
 		}
-		
-		return a;
+
+		/*
+		// If it's not locally saved or too old, fetch it from remote and save it locally
+		if(club == null || System.currentTimeMillis() - club.getLocalRepoTimeStamp() > ClubRepository.tiempoMaximoEnDiasRepositorioLocal * 24 * 60 * 1000) {
+			//Replace these lines with calls to parte1 module, when they decide to finish it
+			club = repo.getFilmRemoteSource().get(id);
+			repo.getFilmLocalSource().storeClub(club);
+		}
+		*/
+		return club;
+	}
+
+	private boolean locallySaved(Club club){
+		return club == null;
+	}
+
+	private boolean tooOld(Club club){
+		return (System.currentTimeMillis() - club.getLocalRepoTimeStamp() > ClubRepository.tiempoMaximoEnDiasRepositorioLocal * 24 * 60 * 1000);
 	}
 }

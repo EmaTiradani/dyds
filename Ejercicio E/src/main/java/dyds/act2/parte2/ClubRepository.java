@@ -2,7 +2,7 @@ package dyds.act2.parte2;
 
 public class ClubRepository {
 	
-	public static final int T = 10; // max time to keep a local record before refreshing form remote, in days
+	public static final int tiempoMaximoEnDiasRepositorioLocal = 10; // max time to keep a local record before refreshing form remote, in days
 	
 	private final ClubLocalSource clubLocalSource;
 	private final ClubRemoteSource clubRemoteSource;

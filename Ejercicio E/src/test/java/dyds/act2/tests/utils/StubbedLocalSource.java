@@ -11,7 +11,7 @@ public class StubbedLocalSource implements ClubLocalSource {
     @Override
     public void storeClub(Club a) {
         if(a != null) {
-            a.setTimeStamp(System.currentTimeMillis());
+            a.setLocalRepoTimeStamp(System.currentTimeMillis());
             albums.put(a.getId(), a);
         }
     }

@@ -62,7 +62,7 @@ public class Parte2Test {
 	public void testOldRefetchedCopy() {
 		Club oldClub = new Club(2, "Walking Club", "El Cubo", 1900);
 		localSource.storeClub(oldClub);
-		oldClub.setTimeStamp(0);
+		oldClub.setLocalRepoTimeStamp(0);
 
 		Club c =  manager.get(2);
 
