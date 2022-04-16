@@ -2,18 +2,18 @@ package dyds.act2.parte1;
 
 public class SearchInfo {
 
-  private String textToSeach;
+  private String textToSearch;
   private String topic;
   private String baseURL;
 
-  public SearchInfo(String textToSeach, String topic, String baseURL) {
-    this.textToSeach = textToSeach;
+  public SearchInfo(String textToSearch, String topic, String baseURL) {
+    this.textToSearch = textToSearch;
     this.topic = topic;
     this.baseURL = baseURL; //in which wiki we should search
   }
 
-  public String getTextToSeach() {
-    return textToSeach;
+  public String getTextToSearch() {
+    return textToSearch;
   }
 
   public String getTopic() {

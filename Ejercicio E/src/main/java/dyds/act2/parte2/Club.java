@@ -63,7 +63,7 @@ public class Club {
 		this.firstDivisionTeam = firstDivisionTeam;
 	}
 
-	public void addMatchInfo(boolean win, int gf, int ga){
+	public void addMatchInfo(boolean win, int gf, int ga){//TODO abstraer esto
 		if(win) currentSeasonWins++;
 		else currentSeasonLosses++;
 		currentSeasonGoalsReceived += ga;

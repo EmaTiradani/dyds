@@ -13,7 +13,7 @@ public class Manager {
 		
 		Club club =  repo.getFilmLocalSource().getClub(id);
 
-		if(!locallySaved(club) || tooOld(club)){
+		if(notLocallySaved(club) || tooOld(club)){
 			//Replace these lines with calls to parte1 module, when they decide to finish it TODO
 			club = repo.getFilmRemoteSource().get(id);
 			repo.getFilmLocalSource().storeClub(club);
@@ -30,7 +30,7 @@ public class Manager {
 		return club;
 	}
 
-	private boolean locallySaved(Club club){
+	private boolean notLocallySaved(Club club){
 		return club == null;
 	}
 
